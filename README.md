@@ -1,24 +1,6 @@
-# README
+作成開始日時：　2020年1月19日
+転職用のポートフォリオとして作成いたしました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+請求書のジェネレートサービスを作る予定ですよろしくお願いします。
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
