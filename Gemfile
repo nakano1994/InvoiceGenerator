@@ -58,3 +58,4 @@ gem 'prawn-table'
 
 gem "kaminari"
 gem "kaminari-i18n"
+gem "devise"
