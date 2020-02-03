@@ -18,3 +18,6 @@ table.table.table-hover.table-striped
         td colspan="2"
         td 合計
         td = @sheet.total_price
+
+
+= link_to "PDFを表示", [ :sheet, format: :pdf], target: :_blank, class: "btn btn-success"          

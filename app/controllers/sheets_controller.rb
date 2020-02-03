@@ -5,6 +5,16 @@ class SheetsController < ApplicationController
   end
   def show
     @answers = @sheet.answers
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = RecordPdf.new(@sheet)
+        send_data pdf.render,
+                  filename: "sample.pdf",
+                  type:        "application/pdf",
+                  disposition: "inline"
+      end
+    end
   end
   def new
   end
