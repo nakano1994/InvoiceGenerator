@@ -1,33 +1,16 @@
-<!-- <template>
-     <div>
-     <label v-bind:for="params">{{ label }}</label>
-     <div v-for="(list, index) in lists">
-     <div class="form-group">
-     <div class="form-row">
-     <div class="col-7">
-     <input
-     class="form-control"
-     required="required"
-     multiple="multiple"
-     v-bind:type="type"
-     v-bind:name="params | item"
-     v-bind:id="params"
-     v-bind:placeholder="placeholder"
-     v-model="list.inputText"
-     >
-     </div>
-     <div class="col">
-     <button v-on:click="onDelete(index)"  type="button" class="btn btn-danger">削除</button>
-     </div>
-     </div>
-     </div>
-     </div>
-     <button type="button" v-on:click="onAdd" class="btn btn-success"> 追加</button>
-     </div>
-     </template> -->
-
 <template>
     <div>
+	<div class="row">
+	    <div class="col-5">
+		<a>品物名</a>
+	    </div>
+	    <div class="col-2">
+		<a>単価(円)</a>
+            </div>
+	    <div class="col-2">
+		<a>個数</a>
+            </div>
+	</div>
 	<div v-for="(list, index) in lists">
 	    <div class="form-group">
 		<div class="form-row">
@@ -43,7 +26,7 @@
 			    v-model="list.product_name"
 			>
 		    </div>
-		    <div class="col-1">
+		    <div class="col-2">
 			<input
                             class="form-control"
                             required="required"
@@ -55,7 +38,7 @@
 			    v-model="list.price"
                         >
 		    </div>
-		    <div class="col-1">			
+		    <div class="col-2">
                         <input
                             class="form-control"
                             required="required"
@@ -89,7 +72,6 @@
 		    product_name: "",
 		    price: "",
 		    quantity: "",
-		    inputText: ""
 		}
 	    ],
 	}
