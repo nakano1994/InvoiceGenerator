@@ -1,0 +1,25 @@
+h2 請求書
+
+= link_to '新規作成', root_path, class: 'btn btn-primary'
+  
+table.table.table-hover.table-striped
+    thead
+      tr
+        th 品物名
+        th 単価
+        th 個数
+        th 値段  
+    tbody
+      - @answers.each do |answer|
+        tr
+          td = answer.product_name
+          td = answer.price
+          td = answer.quantity
+          td = answer.total_price
+      tr.table-warning
+        td colspan="2"
+        td 合計
+        td = @sheet.total_price
+
+
+= link_to "PDFを表示", [ :sheet, format: :pdf], target: :_blank, class: "btn btn-success"

@@ -1,0 +1,15 @@
+/ p
+/   | Welcome 
+/   = @email
+/   | !
+/ p
+/   | You can confirm your account email through the link below:
+/ p
+/   = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+
+p この度は新規登録頂き誠にありがとうございます。
+p 本メールは、アカウント新規登録確認フォームより自動送信しております。
+    
+p 下記のURLをクリックして、アカウントの登録を完了してください。
+    
+p = link_to 'アカウントの登録を完了する', confirmation_url(@resource, confirmation_token: @token) 

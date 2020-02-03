@@ -1,0 +1,9 @@
+h3 書類作成
+
+#app
+  = form_with url: [:sheets], local: true do |f|
+    multform
+    = f.submit '登録する', class: 'btn btn-primary'
+
+= javascript_pack_tag "sheets_new"
+    

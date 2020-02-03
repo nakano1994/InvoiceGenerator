@@ -12,6 +12,19 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => Rails.application.credentials.dig(:act_mail_address),
+    :port => 587,
+    :domain => Rails.application.credentials.dig(:act_mail_domain),
+    :user_name => Rails.application.credentials.dig(:act_mail_user_name),
+    :password => Rails.application.credentials.dig(:act_mail_password),
+    :authentication => 'login',
+  }
+
+  
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
