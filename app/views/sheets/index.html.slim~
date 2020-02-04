@@ -1,0 +1,12 @@
+p index
+
+table.table.table-hover
+  thead
+    tr
+      th 作成日時
+  tbody
+    - @sheets.each do |sheet|
+      tr
+        td = link_to sheet.created_at, sheet
+
+= paginate @sheets

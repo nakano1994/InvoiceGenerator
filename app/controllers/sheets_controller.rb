@@ -1,7 +1,10 @@
 # coding: utf-8
 class SheetsController < ApplicationController
   before_action :set_sheet, only: [:show]
+  before_action :authenticate_user!, only: [:index]
   def index
+    @sheets = Sheet.where(user_id: current_user.id)
+                .page(params[:page]).per(5)
   end
   def show
     @answers = @sheet.answers

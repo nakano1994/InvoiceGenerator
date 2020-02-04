@@ -10,6 +10,8 @@
             = link_to "無料会員登録", "/users/sign_up", class: "nav-link"
         - else
           li.nav-link
+            = link_to "請求書一覧", [:sheets], class: "nav-link"
+          li.nav-link
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
           - if current_user.account_type == 2
             li.nav-link
