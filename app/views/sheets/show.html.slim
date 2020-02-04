@@ -9,7 +9,8 @@ table.table.table-hover.table-striped
         th 品物名
         th 単価
         th 個数
-        th 値段  
+        th 値段
+        th
     tbody
       - @answers.each do |answer|
         tr
@@ -17,10 +18,13 @@ table.table.table-hover.table-striped
           td = answer.price
           td = answer.quantity
           td = answer.total_price
+          td
+            = link_to "編集", [:edit, @sheet, answer], class: 'btn btn-warning'
+            = link_to "削除", [@sheet, answer], data: { confirm: '本当に削除しますか?'}, method: :delete, class: 'btn btn-danger'
       tr.table-warning
         td colspan="2"
         td 合計
         td = @sheet.total_price
-
+        td
 
 = link_to "PDFを表示", [ :sheet, format: :pdf], target: :_blank, class: "btn btn-success"

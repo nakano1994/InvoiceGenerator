@@ -41,6 +41,8 @@ class SheetsController < ApplicationController
     redirect_to [@sheet]
   end
   def destroy
+    @sheet.destroy
+    redirect_to :root
   end
   private
   def set_sheet
